@@ -9,7 +9,7 @@ pipeline {
             }
             stage('BUILD') {
                 steps { 
-                    ech 'Build Sucess'
+                    echo 'Build Sucess'
                 }
             }
             stage('TEST') {
