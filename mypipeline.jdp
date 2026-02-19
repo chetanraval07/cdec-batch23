@@ -2,13 +2,14 @@ pipeline {
     agent any
         stages { 
             stage('PULL') {
-                steps { 
+                steps {
+                    git 'https://github.com/chetanraval07/cdec-batch23.git'
                     echo 'Pull Success'
                 }
             }
             stage('BUILD') {
                 steps { 
-                    echo 'Build Sucess'
+                    ech 'Build Sucess'
                 }
             }
             stage('TEST') {
