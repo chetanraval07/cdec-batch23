@@ -1,4 +1,4 @@
-.pipeline {
+pipeline {
     agent any
 
     stages {
@@ -6,7 +6,7 @@
         stage('PULL') {
             steps {
                 git 'https://github.com/chetanraval07/cdec-batch23.git'
-                ech 'Pull Success'
+                echo 'Pull Success'
             }
         }
 
