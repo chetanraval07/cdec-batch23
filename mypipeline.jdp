@@ -9,7 +9,7 @@ pipeline {
             }
             stage('BUILD') {
             steps {
-                dir('backend') {
+                dir('my-app') {
                     sh 'mvn clean package -DskipTests'
                 }
             }
