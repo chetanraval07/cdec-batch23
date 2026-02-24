@@ -20,10 +20,10 @@ pipeline {
 
         stage('SONARQUBE ANALYSIS') {
             steps {
-                withSonarQubeEnv(credentialsId: 'my-cred') {   
+                withSonarQubeEnv('SonarQubeServer') {   // ✅ Use server NAME only
                     dir('backend') {
                         sh '''
-                        mvn sonar:sonar \\
+                        mvn sonar:sonar \
                         -Dsonar.projectKey=student-app2.0 \
                         -Dsonar.projectName=student-app2.0
                         '''
