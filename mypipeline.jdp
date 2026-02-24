@@ -20,12 +20,12 @@ pipeline {
 
         stage('SONARQUBE ANALYSIS') {
             steps {
-                withSonarQubeEnv('SoNarQuBe') {   
+                withSonarQubeEnv(credentialsId: 'my-cred') {   
                     dir('backend') {
                         sh '''
-                        mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                        -Dsonar.projectKey=studentapp2.0 \
-                        -Dsonar.projectName=studentapp2.0
+                        mvn sonar:sonar \\
+                        -Dsonar.projectKey=student-app2.0 \
+                        -Dsonar.projectName=student-app2.0
                         '''
                     }
                 }
