@@ -18,19 +18,19 @@ pipeline {
             }
         }
 
-	stage('TEST') {
-            steps {
+	
+	stage('SONARQUBE ANALYSIS') {
+             steps {
+                withSonarQubeEnv(credentialsId: 'Sonar-cred') {
                 dir('backend') {
                     sh '''mvn sonar:sonar \\
   -Dsonar.projectKey=student-app2.0 \\
-  -Dsonar.projectName=\'student-app2.0\' \\
-  -Dsonar.host.url=http://3.125.160.202:9000 \\
-  -Dsonar.token=sqp_9ba7bfec3a1fa4dccf790f2096681033ba67e4be'''
+  -Dsonar.projectName=\'student-app2.0\' \\'''
 
+                    }
                 }
             }
         }
-
         
         stage('DEPLOY') {
             steps {
