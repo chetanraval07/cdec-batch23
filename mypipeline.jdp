@@ -20,7 +20,7 @@ pipeline {
 
         stage('SONARQUBE ANALYSIS') {
             steps {
-                withSonarQubeEnv('SonarQubeServer') {   // ✅ Use server NAME only
+                withSonarQubeEnv('Sonar-cred') {   // ✅ Use server NAME only
                     dir('backend') {
                         sh '''
                         mvn sonar:sonar \
